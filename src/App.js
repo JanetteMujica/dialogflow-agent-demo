@@ -1,25 +1,123 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [hasError, setHasError] = useState(false);
+	const scriptLoadedRef = useRef(false);
+
+	useEffect(() => {
+		// Check if script is already loaded
+		if (window.dfMessenger || scriptLoadedRef.current) {
+			setIsLoaded(true);
+			return;
+		}
+
+		// Check if script tag already exists
+		const existingScript = document.querySelector(
+			'script[src*="dialogflow-console/fast/messenger/bootstrap.js"]'
+		);
+		if (existingScript) {
+			setIsLoaded(true);
+			scriptLoadedRef.current = true;
+			return;
+		}
+
+		// Load DialogFlow Messenger script only once
+		const script = document.createElement('script');
+		script.src =
+			'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1';
+		script.async = true;
+
+		script.onload = () => {
+			setIsLoaded(true);
+			scriptLoadedRef.current = true;
+			setHasError(false);
+		};
+
+		script.onerror = () => {
+			console.error('Failed to load DialogFlow Messenger script');
+			setHasError(true);
+			setIsLoaded(false);
+		};
+
+		document.head.appendChild(script);
+	}, []);
+
+	return (
+		<div className='app'>
+			{/* Header Banner */}
+			<div className='header-banner'>
+				<div className='banner-content'>
+					<img
+						src='/assets/images/eCarePD_logo.svg'
+						alt='eCarePD Logo'
+						className='ecare-logo'
+						onError={(e) => {
+							e.target.style.display = 'none';
+							e.target.nextSibling.style.display = 'block';
+						}}
+					/>
+					<div className='ecare-logo-fallback' style={{ display: 'none' }}>
+						eCare-PD
+					</div>
+				</div>
+			</div>
+
+			{/* Main Content */}
+			<div className='main-content'>
+				<div className='content-wrapper'>
+					{/* CAFY Logo */}
+					<div className='cafy-logo-container'>
+						<img
+							src='/assets/images/cafy_logo.svg'
+							alt='CAFY Logo'
+							className='cafy-logo'
+							onError={(e) => {
+								e.target.style.display = 'none';
+								e.target.nextSibling.style.display = 'block';
+							}}
+						/>
+						<div className='cafy-logo-fallback' style={{ display: 'none' }}>
+							CAFY
+						</div>
+					</div>
+
+					{/* Text Content */}
+					<div className='text-content'>
+						<h1 className='main-heading'>
+							Hi, I'm CAFY — your assistant designed to help you navigate
+							Parkinson's, one day at a time.
+						</h1>
+
+						<p className='description'>
+							Because your Parkinson's journey is unique, my role is to guide
+							you step by step in identifying what matters most to you, so you
+							can set goals that support your well-being.
+						</p>
+					</div>
+				</div>
+
+				{/* DialogFlow Messenger - positioned bottom right */}
+				{isLoaded && !hasError && (
+					<df-messenger
+						intent='WELCOME'
+						chat-title='DTI_A4_Chat_Bot'
+						agent-id='66c17bfb-da8e-4123-897d-b9220a2e0dd8'
+						language-code='en'
+						className='chatbot-messenger'
+					></df-messenger>
+				)}
+
+				{hasError && (
+					<div className='error-message'>
+						Failed to load chatbot. Please refresh the page.
+					</div>
+				)}
+			</div>
+		</div>
+	);
 }
 
 export default App;

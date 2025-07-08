@@ -1,38 +1,316 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* Font Face Declarations for Filson Pro */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('./assets/fonts/FilsonProBlack.otf') format('opentype');
+	font-weight: 900;
+	font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('./assets/fonts/FilsonProRegular.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('./assets/fonts/FilsonProBold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('./assets/fonts/FilsonProMedium.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
 }
 
-.App-link {
-  color: #61dafb;
+/* Reset and Base */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html,
+body {
+	height: 100%;
+	overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+	font-family: 'Filson Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+	min-height: 100vh;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+/* Header Banner */
+.header-banner {
+	background-color: #263b7f; /* Dark blue from colors.js */
+	padding: 1rem 0;
+	flex-shrink: 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.ecare-logo {
+	height: 40px;
+	width: auto;
+}
+
+.ecare-logo-fallback {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: white;
+	text-decoration: none;
+}
+
+/* Main Content */
+.main-content {
+	flex: 1;
+	background: linear-gradient(
+		135deg,
+		#f0f4ff 0%,
+		#e5f3f0 100%
+	); /* Light blue gradient */
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	max-width: 800px;
+	width: 100%;
+	padding: 2rem;
+	gap: 2rem;
+}
+
+/* CAFY Logo */
+.cafy-logo-container {
+	flex-shrink: 0;
+}
+
+.cafy-logo {
+	height: 120px;
+	width: auto;
+	max-width: 100%;
+	background: transparent !important;
+	/* Remove any background from SVG */
+	filter: drop-shadow(0 0 0 transparent);
+}
+
+.cafy-logo-fallback {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: 900;
+	font-size: 4rem;
+	color: #4f6ed4;
+	text-align: center;
+	letter-spacing: 0.05em;
+}
+
+/* Text Content */
+.text-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	max-width: 600px;
+}
+
+.main-heading {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: 900; /* Filson Pro Black */
+	font-size: 2rem;
+	line-height: 1.2;
+	color: #263b7f; /* Dark blue as requested */
+	margin: 0;
+}
+
+.description {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: 400; /* Filson Pro Regular */
+	font-size: 1.125rem;
+	line-height: 1.5;
+	color: #263b7f; /* Dark blue as requested */
+	margin: 0;
+}
+
+/* Chatbot Messenger */
+.chatbot-messenger {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Error Message */
+.error-message {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background: #de6957;
+	color: white;
+	padding: 1rem;
+	border-radius: 8px;
+	font-size: 0.875rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.header-banner {
+		padding: 0.75rem 0;
+	}
+
+	.ecare-logo {
+		height: 32px;
+	}
+
+	.ecare-logo-fallback {
+		font-size: 1.25rem;
+	}
+
+	.content-wrapper {
+		padding: 1.5rem;
+		gap: 1.5rem;
+	}
+
+	.cafy-logo {
+		height: 80px;
+	}
+
+	.cafy-logo-fallback {
+		font-size: 2.5rem;
+	}
+
+	.main-heading {
+		font-size: 1.5rem;
+	}
+
+	.description {
+		font-size: 1rem;
+	}
+
+	.chatbot-messenger {
+		bottom: 15px;
+		right: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.content-wrapper {
+		padding: 1rem;
+		gap: 1rem;
+	}
+
+	.cafy-logo {
+		height: 60px;
+	}
+
+	.cafy-logo-fallback {
+		font-size: 2rem;
+	}
+
+	.main-heading {
+		font-size: 1.25rem;
+		line-height: 1.3;
+	}
+
+	.description {
+		font-size: 0.9rem;
+	}
+
+	.chatbot-messenger {
+		bottom: 10px;
+		right: 10px;
+	}
+}
+
+/* Landscape mobile adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+	.content-wrapper {
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	.cafy-logo {
+		height: 50px;
+	}
+
+	.cafy-logo-fallback {
+		font-size: 1.75rem;
+	}
+
+	.main-heading {
+		font-size: 1.125rem;
+	}
+
+	.description {
+		font-size: 0.875rem;
+		line-height: 1.4;
+	}
+}
+
+/* Custom DialogFlow Messenger Styling */
+df-messenger {
+	--df-messenger-bot-message: #f0f4ff;
+	--df-messenger-button-titlebar-color: #263b7f;
+	--df-messenger-chat-background-color: #ffffff;
+	--df-messenger-font-color: #1f2937;
+	--df-messenger-send-icon: #4f6ed4;
+	--df-messenger-user-message: #4f6ed4;
+	--df-messenger-border-radius: 12px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.main-content {
+		background: #ffffff;
+	}
+
+	.main-heading {
+		color: #000000;
+	}
+
+	.description {
+		color: #000000;
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
 }
