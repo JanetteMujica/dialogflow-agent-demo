@@ -101,23 +101,23 @@ The app uses CSS custom properties defined in `src/index.css`. Current color sch
 
 ## GIT
 
-# 1. Check current status
+### Check current status
 
 git status
 
-# 2. Stage all changes
+### Stage all changes
 
 git add .
 
-# 3. Commit changes
+### Commit changes
 
-git commit -m "Fix asset paths for GitHub Pages deployment"
+git commit -m "xx"
 
-# 4. Push to GitHub
+### Push to GitHub
 
 git push origin main
 
-# 5. Redeploy to GitHub Pages
+### Redeploy to GitHub Pages
 
 npm run deploy
 
