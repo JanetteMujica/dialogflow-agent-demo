@@ -99,4 +99,26 @@ The app uses CSS custom properties defined in `src/index.css`. Current color sch
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## GIT
+
+# 1. Check current status
+
+git status
+
+# 2. Stage all changes
+
+git add .
+
+# 3. Commit changes
+
+git commit -m "Fix asset paths for GitHub Pages deployment"
+
+# 4. Push to GitHub
+
+git push origin main
+
+# 5. Redeploy to GitHub Pages
+
+npm run deploy
+
 Built with ❤️ using React and modern web technologies.

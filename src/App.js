@@ -51,7 +51,7 @@ function App() {
 			<div className='header-banner'>
 				<div className='banner-content'>
 					<img
-						src='/assets/images/eCarePD_logo.svg'
+						src={`${process.env.PUBLIC_URL}/assets/images/eCarePD_logo.svg`}
 						alt='eCarePD Logo'
 						className='ecare-logo'
 						onError={(e) => {
@@ -71,7 +71,7 @@ function App() {
 					{/* CAFY Logo */}
 					<div className='cafy-logo-container'>
 						<img
-							src='/assets/images/cafy_logo.svg'
+							src={`${process.env.PUBLIC_URL}/assets/images/cafy_logo.svg`}
 							alt='CAFY Logo'
 							className='cafy-logo'
 							onError={(e) => {
