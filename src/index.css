@@ -31,7 +31,7 @@
 html {
 	font-size: 16px;
 	height: 100%;
-	overflow: hidden; /* Prevent page scrolling */
+	overflow-x: hidden; /* Only prevent horizontal scrolling */
 }
 
 body {
@@ -43,18 +43,31 @@ body {
 	background-color: var(--color-bg-primary);
 	color: var(--color-text-primary);
 	line-height: 1.5;
-	overflow: hidden; /* Prevent body scrolling */
+	overflow-x: hidden; /* Allow vertical scrolling, prevent horizontal */
 }
 
 #root {
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 /* Accessibility */
 *:focus {
 	outline: 2px solid var(--color-primary);
 	outline-offset: 2px;
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+	/* Better touch targets */
+	button,
+	[role='button'],
+	input,
+	select,
+	textarea {
+		min-height: 44px;
+		min-width: 44px;
+	}
 }
 
 /* High contrast mode */

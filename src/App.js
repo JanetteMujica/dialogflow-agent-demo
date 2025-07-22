@@ -99,7 +99,7 @@ function App() {
 									fontWeight: 'bold',
 								}}
 							>
-								To test our demo, write: "I have pain"
+								To test our demo, write: <br /> "I have pain"
 							</span>
 							.
 						</p>
