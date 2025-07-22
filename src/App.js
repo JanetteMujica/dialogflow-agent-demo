@@ -127,7 +127,10 @@ function App() {
 							Our Conversational Recommendation System (CRS) is designed to help
 							people manage pain related to Parkinson’s disease by offering
 							practical self-care tips tailored to the severity of their
-							symptoms. When a user mentions a pain symptom—such as saying,{' '}
+							symptoms.
+						</p>
+						<p className='description'>
+							When a user mentions a pain symptom—such as saying,{' '}
 							<strong>"I have pain"</strong> —the CRS explains what that might
 							mean and suggests a relevant care goal. It then asks a few simple
 							follow-up questions, such as where the pain is, what type it is,
