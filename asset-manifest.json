@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/dialogflow-agent-demo/static/css/main.63765d6f.css",
-    "main.js": "/dialogflow-agent-demo/static/js/main.c742e5a5.js",
+    "main.js": "/dialogflow-agent-demo/static/js/main.49253267.js",
     "static/media/FilsonProBlack.otf": "/dialogflow-agent-demo/static/media/FilsonProBlack.03a9993b8c09e0e6cc2f.otf",
     "static/media/FilsonProMedium.otf": "/dialogflow-agent-demo/static/media/FilsonProMedium.7c25286bbf25f763b7f9.otf",
     "static/media/FilsonProBold.otf": "/dialogflow-agent-demo/static/media/FilsonProBold.2dfc3c131c5cbb335b6d.otf",
     "static/media/FilsonProRegular.otf": "/dialogflow-agent-demo/static/media/FilsonProRegular.ae328a20dd3039063679.otf",
     "index.html": "/dialogflow-agent-demo/index.html",
     "main.63765d6f.css.map": "/dialogflow-agent-demo/static/css/main.63765d6f.css.map",
-    "main.c742e5a5.js.map": "/dialogflow-agent-demo/static/js/main.c742e5a5.js.map"
+    "main.49253267.js.map": "/dialogflow-agent-demo/static/js/main.49253267.js.map"
   },
   "entrypoints": [
     "static/css/main.63765d6f.css",
-    "static/js/main.c742e5a5.js"
+    "static/js/main.49253267.js"
   ]
 }
