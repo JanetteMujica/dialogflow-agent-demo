@@ -88,13 +88,39 @@ function App() {
 					<div className='text-content'>
 						<h1 className='main-heading'>
 							Hi, I'm CAFY — your assistant designed to help you navigate
-							Parkinson's, one day at a time.
+							Parkinson's pain, one day at a time.
 						</h1>
 
 						<p className='description'>
-							Because your Parkinson's journey is unique, my role is to guide
-							you step by step in identifying what matters most to you, so you
-							can set goals that support your well-being.
+							<span
+								style={{
+									fontSize: '2em',
+									backgroundColor: 'yellow',
+									fontWeight: 'bold',
+								}}
+							>
+								To test our demo, write: "I have pain"
+							</span>
+							.
+						</p>
+
+						<p className='description'>
+							Our Conversational Recommendation System (CRS) is designed to help
+							people manage pain related to Parkinson’s disease by offering
+							practical self-care tips tailored to the severity of their
+							symptoms. When a user mentions a pain symptom—such as saying,{' '}
+							<strong>"I have pain"</strong> —the CRS explains what that might
+							mean and suggests a relevant care goal. It then asks a few simple
+							follow-up questions, such as where the pain is, what type it is,
+							and how it's affecting sleep, mood, and daily activities.
+						</p>
+
+						<p className='description'>
+							Based on the user’s responses, the CRS estimates the level of pain
+							and provides personalized care suggestions, ranging from basic
+							education to more advanced support. These tips may include helpful
+							complementary media—such as videos or podcasts—sourced from
+							trusted Parkinson’s organizations.
 						</p>
 					</div>
 				</div>

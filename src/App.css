@@ -156,7 +156,7 @@ body {
 .description {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: 400; /* Filson Pro Regular */
-	font-size: 1.125rem;
+	font-size: 1rem;
 	line-height: 1.5;
 	color: #263b7f; /* Dark blue as requested */
 	margin: 0;
