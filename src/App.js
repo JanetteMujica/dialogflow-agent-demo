@@ -94,12 +94,31 @@ function App() {
 						<p className='description'>
 							<span
 								style={{
-									fontSize: '2em',
+									fontSize: '1.2em',
 									backgroundColor: 'yellow',
 									fontWeight: 'bold',
 								}}
 							>
-								To test our demo, write: <br /> "I have pain"
+								Before trying the demo, &nbsp;
+								<a
+									href='https://dti5125-dialogflow-fastapi-webhook.onrender.com'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									please activate Render by visiting this URL
+								</a>
+							</span>
+						</p>
+
+						<p className='description'>
+							<span
+								style={{
+									fontSize: '1.2em',
+									backgroundColor: 'yellow',
+									fontWeight: 'bold',
+								}}
+							>
+								Then, write in the chatbot: "I have pain"
 							</span>
 							.
 						</p>
